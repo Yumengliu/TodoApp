@@ -8,8 +8,8 @@ namespace TodoApp.Service
     {
         int CreateTodoItem(string Content);
         TodoItem GetTodoItem(int Id);
-        void ExecuteTodoItem(int Id);
-        void DeleteTodoItem(int Id);
+        bool ExecuteTodoItem(int Id);
+        bool DeleteTodoItem(int Id);
         List<TodoItem> GetTotalTodoItem();
         List<TodoItem> GetUnfinishedTodoItem();
     }

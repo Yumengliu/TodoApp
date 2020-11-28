@@ -23,18 +23,28 @@ namespace TodoApp.Service
             return todoItem.Id;
         }
 
-        public void DeleteTodoItem(int Id)
+        public bool DeleteTodoItem(int Id)
         {
             TodoItem todoItem = GetTodoItem(Id);
+            if (todoItem == null)
+            {
+                return false;
+            }
             _todoItemRepository.Items.Remove(todoItem);
             _todoItemRepository.SaveChanges();
+            return true;
         }
 
-        public void ExecuteTodoItem(int Id)
+        public bool ExecuteTodoItem(int Id)
         {
             TodoItem todoItem = GetTodoItem(Id);
+            if (todoItem == null)
+            {
+                return false;
+            }
             todoItem.Finish = true;
             _todoItemRepository.SaveChanges();
+            return true;
         }
 
         public TodoItem GetTodoItem(int Id)

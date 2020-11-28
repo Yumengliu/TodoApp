@@ -24,21 +24,25 @@ namespace TodoApp.Controllers
         [HttpGet("/api/v1/item/{Id}")]
         public ActionResult<TodoItem> GetTodoItem(int Id)
         {
-            return Ok(_service.GetTodoItem(Id));
+            TodoItem todoItem = _service.GetTodoItem(Id);
+            if (todoItem == null)
+            {
+                return NotFound();
+            }
+            return Ok(todoItem);
         }
 
         [HttpPut("/api/v1/item/{Id}")]
         public ActionResult Execute(int Id)
         {
-            _service.ExecuteTodoItem(Id);
-            return Ok();
+            return _service.ExecuteTodoItem(Id) ? Ok() : NotFound();
         }
 
         [HttpDelete("/api/v1/item/{Id}")]
         public ActionResult DeleteTodoItem(int Id)
         {
-            _service.DeleteTodoItem(Id);
-            return Ok();
+            return _service.DeleteTodoItem(Id) ? Ok() : NotFound();
+            
         }
 
         [HttpGet("/api/v1/item")]
