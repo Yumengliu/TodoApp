@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using TodoApp.Models;
 using TodoApp.Service;
@@ -39,5 +40,18 @@ namespace TodoApp.Controllers
             _service.DeleteTodoItem(Id);
             return Ok();
         }
+
+        [HttpGet("/api/v1/item")]
+        public ActionResult<List<TodoItem>> GetTotalTodoItem()
+        {
+            return Ok(_service.GetTotalTodoItem());
+        }
+
+        [HttpGet("/api/v1/item/unfinished")]
+        public ActionResult<List<TodoItem>> GetUnfinishedTodoItem()
+        {
+            return Ok(_service.GetUnfinishedTodoItem());
+        }
+
     }
 }

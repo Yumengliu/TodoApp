@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using TodoApp.Models;
 
 namespace TodoApp.Service
@@ -9,5 +10,7 @@ namespace TodoApp.Service
         TodoItem GetTodoItem(int Id);
         void ExecuteTodoItem(int Id);
         void DeleteTodoItem(int Id);
+        List<TodoItem> GetTotalTodoItem();
+        List<TodoItem> GetUnfinishedTodoItem();
     }
 }

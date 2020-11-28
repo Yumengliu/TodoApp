@@ -5587,7 +5587,7 @@
       "outputPath": "/Users/yumengliu/Projects/TodoApp/TodoApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/yumengliu/.nuget/NuGet/NuGet.Config"
+        "/Users/yumengliu/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using TodoApp.Models;
 using TodoApp.Repository;
@@ -39,6 +40,16 @@ namespace TodoApp.Service
         public TodoItem GetTodoItem(int Id)
         {
             return _todoItemRepository.Items.Find(Id);
+        }
+
+        public List<TodoItem> GetTotalTodoItem()
+        {
+            return _todoItemRepository.Items.ToList();
+        }
+
+        public List<TodoItem> GetUnfinishedTodoItem()
+        {
+            return _todoItemRepository.Items.Where(t => t.Finish == false).ToList();
         }
     }
 }
