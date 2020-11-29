@@ -30,7 +30,8 @@ namespace TodoApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<ITodoService, TodoService>();
-            services.AddDbContext<TodoItemRepository>(opt => opt.UseInMemoryDatabase("TodoItem"));
+            services.AddDbContext<TodoItemRepository>(opt => opt.UseSqlServer("server=localhost,1433;database=todoAppDb;" +
+                "user id=sa;password=YourStrong@Passw0rd"));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
