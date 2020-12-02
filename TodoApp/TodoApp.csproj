@@ -22,5 +22,6 @@
     <Folder Include="Repository\" />
     <Folder Include="Service\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Validator\" />
   </ItemGroup>
 </Project>

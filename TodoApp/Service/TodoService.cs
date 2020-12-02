@@ -3,20 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using TodoApp.Models;
 using TodoApp.Repository;
+using TodoApp.Validator;
 
 namespace TodoApp.Service
 {
     public class TodoService : ITodoService
     {
         private readonly TodoItemRepository _todoItemRepository;
+      
 
         public TodoService(TodoItemRepository todoItemRepository)
         {
             _todoItemRepository = todoItemRepository;
+            
         }
 
         public int CreateTodoItem(string Content)
         {
+            if (!TodoItemValidator.Validate(Content))
+            {
+                return -1;
+            }
             TodoItem todoItem = new TodoItem { Content = Content, Finish = false };
             _todoItemRepository.Items.Add(todoItem);
             _todoItemRepository.SaveChanges();

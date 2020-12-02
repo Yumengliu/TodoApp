@@ -1,29 +1,20 @@
 ﻿<Properties StartupConfiguration="{92048616-82CA-4345-A473-3778BBE79D1C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="TodoApp/Migrations/TodoItemRepositoryModelSnapshot.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TodoApp/Service/TodoService.cs">
     <Files>
-      <File FileName="TodoApp/Startup.cs" Line="33" Column="120" />
-      <File FileName="TodoApp/Repository/TodoItemRepository.cs" Line="13" Column="37" />
-      <File FileName="TodoApp/Models/TodoItem.cs" Line="1" Column="1" />
-      <File FileName="TodoApp/Migrations/20201129151508_first.cs" Line="1" Column="1" />
-      <File FileName="TodoApp/Migrations/TodoItemRepositoryModelSnapshot.cs" Line="1" Column="1" />
+      <File FileName="TodoApp/Service/TodoService.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TodoApp" expanded="True">
             <Node name="TodoApp" expanded="True">
-              <Node name="Migrations" expanded="True">
-                <Node name="TodoItemRepositoryModelSnapshot.cs" selected="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Service" expanded="True">
+                <Node name="TodoService.cs" selected="True" />
               </Node>
-              <Node name="Models" expanded="True" />
-              <Node name="Repository" expanded="True" />
+              <Node name="Validator" expanded="True" />
             </Node>
           </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>todoItem</Value>
         </State>
       </Pad>
     </Pads>

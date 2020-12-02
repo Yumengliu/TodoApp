@@ -18,7 +18,12 @@ namespace TodoApp.Controllers
         [HttpPost("/api/v1/item")]
         public ActionResult<int> CreateTodoItem(string content)
         {
-            return Ok(_service.CreateTodoItem(content));
+            int ret = _service.CreateTodoItem(content);
+            if (ret < 0)
+            {
+                return BadRequest();
+            }
+            return Ok(ret);
         }
 
         [HttpGet("/api/v1/item/{Id}")]
